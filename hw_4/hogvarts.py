@@ -3,7 +3,7 @@ class Hogwarts:
         pass
 
     def run(self):
-        pass
+        self.main_loop()
 
     def main_loop(self):
         pass

@@ -128,11 +128,18 @@
 ##4.4
 #
 #
-class Hogwarts:
-    pass
+from hogvarts import Hogwarts
+from student_hogvarts import StudentHogwarts
+from spell import Spell
+class Program:
 
-class StudentHogwarts:
-    pass
+    @staticmethod
+    def main():
+        app = Hogwarts()
+        app.run()
+        app.main_loop()
 
-class Spell:
-    pass
+
+
+
+Program.main()

@@ -232,6 +232,11 @@ class Computer:
         for i in self.__components:
             print(i, end=' ')
 
+    def __del__(self):
+        for component in self.__components:
+            del component
+
+
 # pc = Computer('Пентагон 666')
 #
 # cc1 = pc.create_component('видеокарта', "микросхема")
@@ -242,6 +247,7 @@ class Computer:
 # com3 = pc.remove_component(cc2)
 #
 # pc.display_components()
+# del pc
 
 
 

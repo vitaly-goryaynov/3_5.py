@@ -119,49 +119,125 @@
 
 # 6.3
 
-class Cafe:
-    def __init__(self, name) -> None:
-        self.__name = name
-        self.__menu = []
+# class Cafe:
+#     def __init__(self, name) -> None:
+#         self.__name = name
+#         self.__menu = ['лаваш', "мясо", "помидор", "капуста"]
+#
+#     def __str__(self) -> str:
+#         return f'Кафе {self.__name}. Список необходимых продуктов: {self.__menu}'
+#
+#     def order_products(self, supplier):
+#         for i in supplier.display_products():
+#             if i in self.__menu:
+#                 print(f"Ингредиент {i} поставляет {supplier.get_name()}")
+#
+#     def display_menu(self) -> list:
+#         return self.__menu
+#
+#     def add_product_in_menu(self, product: str) -> None:
+#         self.__menu.append(product)
+#
+# class Suppler:
+#     def __init__(self, name: str) -> None:
+#         self.__name = name
+#         self.__product_list = []
+#
+#     def __str__(self) -> str:
+#         return f'Поставщик {self.__name}, \nсписок поставляемых продуктов {self.__product_list}'
+#
+#     def get_name(self) -> str:
+#         return self.__name
+#
+#     def display_products(self) -> list:
+#         return self.__product_list
+#
+#     def add_product(self, product: str):
+#         self.__product_list.append(product)
+#
+#     def dell_product(self, product: str):
+#         self.__product_list.remove(product)
+#
+#
+# c1 = Cafe('Шаурма Влз')
+#
+# s1 = Suppler('Мясодел.рф')
+# s2 = Suppler('Хлебопёк')
+# s3 = Suppler('Ботаник')
+#
+# s1.add_product('мясо')
+# s2.add_product('лаваш')
+# s3.add_product('помидор')
+# s3.add_product('капуста')
+#
+# c1.order_products(s1)
+# c1.order_products(s3)
+
+# 6.4
+
+class Book:
+    def __init__(self, title: str, author: str, year: int) -> None:
+        self.__title = title
+        self.__author = author
+        self.__year = year
 
     def __str__(self) -> str:
-        return f'Кафе {self.__name}. Список блюд: {self.__menu}'
+        return f'Название книги: {self.__title}, автор {self.__author}, год издания - {self.__year};'
 
-    def get_name(self) -> str:
-        return self.__name
-
-    def set_name(self, name: str) -> None:
+class Library:
+    def __init__(self, name:str) -> None:
         self.__name = name
+        self.__books = []
 
-    def order_products(self):
-        pass
+    def add_book(self, book: object) -> None:
+        if book not in self.__books:
+            self.__books.append(book)
+            print(f'{book} - книга добавлена в список книг')
+        else:
+            print(f'{book} - книга уже есть в библиотеке')
 
-    def display_menu(self) -> list:
-        return self.__menu
+    def remove_book(self, book:object) -> None:
+        if book not in self.__books:
+            print(f'{book} книга отсутствует в библиотеке')
+        else:
+            self.__books.remove(book)
+            print(f'{book} удалена из списка книг')
 
-    def add_dish(self, dish: str) -> None:
-        self.__menu.append(dish)
+    def display_books(self) -> list:
+        return self.__books
+
+b1 = Book('Война миров', 'Дарт Вейдер', 2025)
+b2 = Book('Кошки правят миром', "Василий Рыжий", 2030)
+
+l1 = Library("Городская библиотека")
+
+l1.add_book(b1)
+l1.add_book(b1)
+l1.add_book(b2)
+l1.remove_book(b1)
+
+print(*l1.display_books())
 
 
-class Suppler:
-    def __init__(self, name) -> None:
+# 6.5
+
+
+class Component:
+    def __init__(self, name: str, type: str) -> None:
         self.__name = name
-        self.__product_list = []
+        self.__type = type
 
     def __str__(self) -> str:
-        return f'Поставщик {self.__name}, \nсписок поставляемых продуктов {self.__product_list}'
+        return f"Название компонента - {self.__name}, тип компонента - {self.__type}"
 
-    def get_name(self) -> str:
-        return self.__name
+class Computer:
+    def __init__(self, model: str) -> None:
+        self.model = model
+        self.components = []
 
-    def set_name(self, name: str):
-        self.__name = name
+    def __str__(self) -> str:
+        return f'Компьютер модели - {self.model} состоит из компонентов {self.components}'
 
-    def display_products(self) -> list:
-        return self.__product_list
 
-    def add_product(self, product: str):
-        self.__product_list.append(product)
 
-    def dell_product(self, product: str):
-        self.__product_list.remove(product)
+

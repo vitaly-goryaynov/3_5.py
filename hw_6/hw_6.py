@@ -1,163 +1,134 @@
-# # Задание № 6.1
-# class Animal:
-#     def __init__(self, name, species, age=0, weight=0, is_domestic=True):
-#         self.__name = name
-#         self.__species = species
-#         self.__age = age
-#         self.__weight = weight
-#         self.__is_domestic = is_domestic
-#
-#     def __str__(self) -> str:
-#         return f'Имя животного {self.__name}, вид животного {self.__species}, возраст {self.__age}, \nвес {self.__weight}, является домашним {self.__is_domestic}'
-#
-#     def get_name(self) -> str:
-#         return self.__name
-#
-#     def set_name(self, name:str):
-#         self.__name = name
-#
-#     def get_species(self) -> str:
-#         return self.__species
-#
-#     def set_species(self, species:str):
-#         self.__species = species
-#
-#     def get_age(self) -> int:
-#         return self.__age
-#
-#     def set_age(self, age:int):
-#         self.__age = age
-#
-#     def get_weight(self) -> float:
-#         return self.__weight
-#
-#     def set_weight(self, weight:float):
-#         self.__weight = weight
-#
-#     def get_is_domestic(self) -> bool:
-#         return self.__is_domestic
-#
-#     def set_is_domestic(self, is_domestic: bool):
-#         self.__is_domestic = is_domestic
-#
-#     def make_sound(self, sound:str) -> str:
-#         return f'Животное издало звук {sound}'
-#
-#
-#     def feed(self, food:float) -> str:
-#         if food > 0:
-#             self.__weight = self.__weight + food
-#         else:
-#             return f'Введите корректное значение'
-#
+# # Задание № 3.6.1
+
+class Animal:
+    def __init__(self, name:str, species:str, age=0, weight=0, is_domestic=True):
+        self.__name = name
+        self.__species = species
+        self.__age = age
+        self.__weight = weight
+        self.__is_domestic = is_domestic
+
+    def __str__(self) -> str:
+        return f'Имя животного {self.__name}, вид животного {self.__species}, возраст {self.__age}, \nвес {self.__weight}, является домашним {self.__is_domestic}'
+
+    def get_is_domestic(self) -> bool:
+        return self.__is_domestic
+
+    def set_is_domestic(self, is_domestic: bool):
+        self.__is_domestic = is_domestic
+
+    def make_sound(self, sound:str) -> str:
+        return f'Животное издало звук {sound}'
+
+    def feed(self, food:float) -> str:
+        if food > 0:
+            self.__weight = self.__weight + food
+        else:
+            return f'Введите корректное значение'
+
 #
 # a1 = Animal('Бегемот', "кот", 1, 1)
+
 # print(a1)
+
 # a1.set_name('lex')
 # a1.feed(0.1)
+
 # print(a1)
 
 # 6.2
 
-# class Pizza:
-#     def __init__(self, name, size=18, price=50):
-#         self.__name = name
-#         self.__ingredients = []
-#         self.__size = size
-#         self.__price = price
-#
-#
-#     def __str__(self):
-#         return f'Название пиццы {self.__name}, список ингридиентов {self.__ingredients}, \nразмер пиццы {self.__size}, цена пиццы {self.__price}'
-#
-#     def get_name(self):
-#         return self.__name
-#
-#     def set_name(self, name):
-#         self.__name = name
-#
-#     def get_size(self):
-#         return self.__size
-#
-#     def get_price(self):
-#         return self.__price
-#
-#     def add_ingredients(self, ingredient):
-#         self.__ingredients.append(ingredient)
-#
-#     def get_ingredients(self):
-#         return self.__ingredients
-#
-#     def calculate_price(self):
-#         count = len(self.__ingredients)
-#         if count > 0:
-#             self.__price = self.__price * count
-#
-#     def order_size(self, size):
-#         if size == 18:
-#             self.__size = 18
-#             self.__price = self.__price + 200
-#         elif size == 25:
-#             self.__size = 25
-#             self.__price= self.__price + 300
-#         elif size == 30:
-#             self.__size = 30
-#             self.__price = self.__price + 400
-#         elif size == 35:
-#             self.__size = 35
-#             self.__price = self.__price + 500
-#         else:
-#             print('Недопустимый размер пиццы')
-#
+class Pizza:
+    def __init__(self, name: str, size=18, price=50):
+        self.__name = name
+        self.__ingredients = []
+        self.__size = size
+        self.__price = price
+
+    def __str__(self) -> str:
+        return f'Название пиццы {self.__name}, список ингридиентов {self.__ingredients}, \nразмер пиццы {self.__size}, цена пиццы {self.__price}'
+
+    def get_name(self) -> str:
+        return self.__name
+
+    def add_ingredients(self, ingredient: str):
+        self.__ingredients.append(ingredient)
+
+    def get_ingredients(self) -> list:
+        return self.__ingredients
+
+    def calculate_price(self) -> None:
+        count = len(self.__ingredients)
+        if count > 0:
+            self.__price = self.__price * count
+
+    def order_size(self, size):
+        if size == 18:
+            self.__size = 18
+            self.__price = self.__price + 200
+        elif size == 25:
+            self.__size = 25
+            self.__price= self.__price + 300
+        elif size == 30:
+            self.__size = 30
+            self.__price = self.__price + 400
+        elif size == 35:
+            self.__size = 35
+            self.__price = self.__price + 500
+        else:
+            print('Недопустимый размер пиццы')
+
 #
 # p1 = Pizza('peperony', )
+
 # p1.order_size(25)
 # p1.add_ingredients('salyami')
 # p1.add_ingredients('ogurci')
+
 # p1.calculate_price()
 # print(p1)
 
 # 6.3
 
-# class Cafe:
-#     def __init__(self, name) -> None:
-#         self.__name = name
-#         self.__menu = ['лаваш', "мясо", "помидор", "капуста"]
-#
-#     def __str__(self) -> str:
-#         return f'Кафе {self.__name}. Список необходимых продуктов: {self.__menu}'
-#
-#     def order_products(self, supplier):
-#         for i in supplier.display_products():
-#             if i in self.__menu:
-#                 print(f"Ингредиент {i} поставляет {supplier.get_name()}")
-#
-#     def display_menu(self) -> list:
-#         return self.__menu
-#
-#     def add_product_in_menu(self, product: str) -> None:
-#         self.__menu.append(product)
-#
-# class Suppler:
-#     def __init__(self, name: str) -> None:
-#         self.__name = name
-#         self.__product_list = []
-#
-#     def __str__(self) -> str:
-#         return f'Поставщик {self.__name}, \nсписок поставляемых продуктов {self.__product_list}'
-#
-#     def get_name(self) -> str:
-#         return self.__name
-#
-#     def display_products(self) -> list:
-#         return self.__product_list
-#
-#     def add_product(self, product: str):
-#         self.__product_list.append(product)
-#
-#     def dell_product(self, product: str):
-#         self.__product_list.remove(product)
-#
+class Cafe:
+    def __init__(self, name) -> None:
+        self.__name = name
+        self.__menu = ['лаваш', "мясо", "помидор", "капуста"]
+
+    def __str__(self) -> str:
+        return f'Кафе {self.__name}. Список необходимых продуктов: {self.__menu}'
+
+    def order_products(self, supplier):
+        for i in supplier.display_products():
+            if i in self.__menu:
+                print(f"Ингредиент {i} поставляет {supplier.get_name()}")
+
+    def display_menu(self) -> list:
+        return self.__menu
+
+    def add_product_in_menu(self, product: str) -> None:
+        self.__menu.append(product)
+
+class Suppler:
+    def __init__(self, name: str) -> None:
+        self.__name = name
+        self.__product_list = []
+
+    def __str__(self) -> str:
+        return f'Поставщик {self.__name}, \nсписок поставляемых продуктов {self.__product_list}'
+
+    def get_name(self) -> str:
+        return self.__name
+
+    def display_products(self) -> list:
+        return self.__product_list
+
+    def add_product(self, product: str):
+        self.__product_list.append(product)
+
+    def dell_product(self, product: str):
+        self.__product_list.remove(product)
+
 #
 # c1 = Cafe('Шаурма Влз')
 #
@@ -184,8 +155,9 @@ class Book:
     def __str__(self) -> str:
         return f'Название книги: {self.__title}, автор {self.__author}, год издания - {self.__year};'
 
+
 class Library:
-    def __init__(self, name:str) -> None:
+    def __init__(self, name: str) -> None:
         self.__name = name
         self.__books = []
 
@@ -196,7 +168,7 @@ class Library:
         else:
             print(f'{book} - книга уже есть в библиотеке')
 
-    def remove_book(self, book:object) -> None:
+    def remove_book(self, book: object) -> None:
         if book not in self.__books:
             print(f'{book} книга отсутствует в библиотеке')
         else:
@@ -206,17 +178,18 @@ class Library:
     def display_books(self) -> list:
         return self.__books
 
-b1 = Book('Война миров', 'Дарт Вейдер', 2025)
-b2 = Book('Кошки правят миром', "Василий Рыжий", 2030)
 
-l1 = Library("Городская библиотека")
+# b1 = Book('Война миров', 'Дарт Вейдер', 2025)
+# b2 = Book('Кошки правят миром', "Василий Рыжий", 2030)
+#
+# l1 = Library("Городская библиотека")
 
-l1.add_book(b1)
-l1.add_book(b1)
-l1.add_book(b2)
-l1.remove_book(b1)
+# l1.add_book(b1)
+# l1.add_book(b1)
+# l1.add_book(b2)
+# l1.remove_book(b1)
 
-print(*l1.display_books())
+# print(*l1.display_books())
 
 
 # 6.5
@@ -230,13 +203,45 @@ class Component:
     def __str__(self) -> str:
         return f"Название компонента - {self.__name}, тип компонента - {self.__type}"
 
+
 class Computer:
     def __init__(self, model: str) -> None:
-        self.model = model
-        self.components = []
+        self.__model = model
+        self.__components = []
 
-    def __str__(self) -> str:
-        return f'Компьютер модели - {self.model} состоит из компонентов {self.components}'
+    def create_component(self, name: str, type: str) -> object:
+        component = Component(name, type)
+        return component
+
+    def add_component(self, component: object) -> None:
+        if component not in self.__components:
+            self.__components.append(component)
+            print(f'{component}, добавлен в список компонентов компьютера')
+        else:
+            print(f'Такой компонет уже есть в списке компонентов компьютера')
+
+    def remove_component(self, component: object) -> None:
+        if component not in self.__components:
+            print(f"Компонента с таким именем не существует")
+        else:
+            self.__components.remove(component)
+            print(f'{component}, удалён из списка компонентов компьютера')
+
+
+    def display_components(self) -> None:
+        for i in self.__components:
+            print(i, end=' ')
+
+# pc = Computer('Пентагон 666')
+#
+# cc1 = pc.create_component('видеокарта', "микросхема")
+# cc2 = pc.create_component("клавиатура", "устройство ввода")
+#
+# com1 = pc.add_component(cc1)
+# com2 = pc.add_component(cc2)
+# com3 = pc.remove_component(cc2)
+#
+# pc.display_components()
 
 
 

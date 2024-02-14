@@ -1,3 +1,4 @@
+# Задача №3.7.1
 class Animal:
     def __init__(self, name: str, age: int, vertebrates: bool):
         self.name = name
@@ -53,20 +54,20 @@ class Parrot(Bird):
         return f'Вид {self.name}, возраст {self.age}, подтип позвоночные {self.vertebrates}, \nесть перья {self.have_feathers}, может говорить {self.can_say}'
 
 
-
 class Amphibian(Animal):
-    def __init__(self, name: str, age: int, vertebrates: bool, born_larva:bool):
+    def __init__(self, name: str, age: int, vertebrates: bool, born_larva: bool):
         Animal.__init__(self, name, age, vertebrates)
         self.born_larva = born_larva
 
 
 class Frog(Amphibian):
-    def __init__(self,  name: str, age: int, vertebrates=True, born_larva=True, jump=True):
+    def __init__(self, name: str, age: int, vertebrates=True, born_larva=True, jump=True):
         Amphibian.__init__(self, name, age, vertebrates, born_larva)
         self.jump = jump
 
     def __str__(self):
         return f'Вид {self.name}, возраст {self.age}, подтип позвоночные {self.vertebrates}, \nрождается личинкой {self.born_larva}, прыгает {self.jump}'
+
 
 class Salamander(Amphibian):
     def __init__(self, name: str, age: int, vertebrates=True, born_larva=True, tail=True):
@@ -78,7 +79,7 @@ class Salamander(Amphibian):
 
 
 class Reptile(Animal):
-    def __init__(self, name: str, age: int, vertebrates: bool, lay_eggs_in_soil:bool):
+    def __init__(self, name: str, age: int, vertebrates: bool, lay_eggs_in_soil: bool):
         Animal.__init__(self, name, age, vertebrates)
         self.lay_eggs_in_soil = lay_eggs_in_soil
 
@@ -102,7 +103,7 @@ class Boa(Reptile):
 
 
 class Fish(Animal):
-    def __init__(self, name: str, age: int, vertebrates: bool, live_in_water:bool):
+    def __init__(self, name: str, age: int, vertebrates: bool, live_in_water: bool):
         Animal.__init__(self, name, age, vertebrates)
         self.live_in_water = live_in_water
 

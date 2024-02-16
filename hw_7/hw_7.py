@@ -130,3 +130,76 @@ c1 = Cat('Vasily', 10)
 d2 = Dog('Rex', 2)
 print(c1)
 print(d2)
+
+
+# 7.2
+
+class Subject:
+    def __init__(self):pass
+
+
+class Humanities_Scienes:
+    def __init__(self):
+        Subject.__init__()
+        pass
+
+
+class History:
+    def __init__(self):
+        Humanities_Scienes.__init__()
+        pass
+
+
+class Literature:
+    def __init__(self):
+        Humanities_Scienes.__init__()
+        pass
+
+
+class Foreign_Languages:
+    def __init__(self):
+        Humanities_Scienes.__init__()
+        pass
+
+
+class Natural_sciences:
+    def __init__(self):
+        Subject.__init__()
+        pass
+
+
+class Physics:
+    def __init__(self):
+        Natural_sciences.__init__()
+        pass
+
+
+class Chemistry:
+    def __init__(self):
+        Natural_sciences.__init__()
+        pass
+
+
+class Biology:
+    def __init__(self):
+        Natural_sciences.__init__()
+        pass
+
+
+class Geography:
+    def __init__(self):
+        Natural_sciences.__init__()
+        pass
+
+
+class Extract_Scienes:
+    def __init__(self):
+        Subject.__init__()
+        pass
+
+
+class Mathematics:
+    def __init__(self):
+        Extract_Scienes.__init__()
+        pass
+

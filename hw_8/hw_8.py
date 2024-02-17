@@ -30,9 +30,9 @@ class Educational_institution:
 
 
 class University(Educational_institution):
-    def __init__(self, name:str, typ:str, address:str, count_students:int, count_teacher:int, level_accreditation:int, list_faculty=[]):
+    def __init__(self, name:str, typ:str, address:str, count_students:int, count_teacher:int, level_accreditation:int):
         Educational_institution.__init__(self, name, typ, address, count_students, count_teacher)
-        self._list_faculty = list_faculty
+        self._list_faculty = []
         self._level_accreditation = level_accreditation
 
     def info (self) -> None:

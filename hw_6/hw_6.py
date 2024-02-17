@@ -153,7 +153,7 @@ class Book:
         self.__year = year
 
     def __str__(self) -> str:
-        return f'Название книги: {self.__title}, автор {self.__author}, год издания - {self.__year};'
+        return f'Название книги: {self.__title}, автор {self.__author}, год издания: {self.__year};'
 
 
 class Library:
@@ -179,17 +179,17 @@ class Library:
         return self.__books
 
 
-# b1 = Book('Война миров', 'Дарт Вейдер', 2025)
-# b2 = Book('Кошки правят миром', "Василий Рыжий", 2030)
-#
-# l1 = Library("Городская библиотека")
+b1 = Book('Война миров', 'Дарт Вейдер', 2025)
+b2 = Book('Кошки правят миром', "Василий Рыжий", 2030)
 
-# l1.add_book(b1)
-# l1.add_book(b1)
-# l1.add_book(b2)
-# l1.remove_book(b1)
+l1 = Library("Городская библиотека")
 
-# print(*l1.display_books())
+l1.add_book(b1)
+l1.add_book(b1)
+l1.add_book(b2)
+l1.remove_book(b1)
+
+print(*l1.display_books())
 
 
 # 6.5

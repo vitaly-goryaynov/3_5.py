@@ -1,6 +1,6 @@
 # 3.5
 class Dinosaur:
-    def __init__(self, name:str, health:int, damage:int, endurance:int, endurance_price_attack:int) -> None:
+    def __init__(self, name:str, health:int, damage:int, endurance:int, endurance_price_attack:int):
         self.__name = name
         self.__health = health
         self.__damage = damage
@@ -32,7 +32,7 @@ class Dinosaur:
     def take_damage(self, amount: int) -> None:
         if amount > 0 and self.__health > 0:
             if amount < self.__health:
-                self.__health = self.__health - amount
+                self.__health -= amount
             else:
                 self.__health = 0
                 self.__death_dino()
@@ -59,7 +59,7 @@ class Dinosaur:
 
 
 class Prey:
-    def __init__(self, name: str, health: int) -> None:
+    def __init__(self, name: str, health: int):
         self.__name = name
         self.__health = health
 
@@ -94,7 +94,7 @@ class Prey:
             print('Животное-добыча погибает')
 
 class Ecosystem:
-    def __init__(self) -> None:
+    def __init__(self):
         self.__prey = []
         self.__dinosaurs = []
 

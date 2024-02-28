@@ -77,17 +77,19 @@ class Dungeon:
             print('Для симмуляции исследования подземелья добавьте предметы героя')
             return
 
-        # from random import randint as rd
-        # calculate_scenario = rd(1, 2)
-        # if calculate_scenario == 1:
+        from random import randint as rd
+        calculate_scenario = rd(1, 2)
         thing = self.__calculate_finding_thing()
-        hero.pick_up(thing)
-        # hero.use_item(thing)
+        monster = self.__calculate_meeting_monster()
+        monster1 = self.__calculate_meeting_monster()
+        if calculate_scenario == 1:
+            hero.pick_up(thing)
+            hero.fight(monster)
 
-
-
-
-
+        else:
+            monster.attack(hero)
+            monster1.attack(hero)
+            hero.pick_up(thing)
 
 
 
@@ -108,7 +110,7 @@ i3 = Item('helmet', 'armor')
 d.add_thing(i3)
 i4= Item('bow and arrow', 'weapon')
 d.add_thing(i4)
-h1.use_item('armor Zeus')
+
 
 
 d.explore(h1)

@@ -120,11 +120,12 @@ class Manager(Empoloyee):
         else:
             self._list_employee.remove(employee)
 
+
 m1 = Manager('Василий', 'менеджер', "подаж", 50000, 3, 2)
-m2 = Manager('Василий', 'менеджер', "подаж", 50000, 3, 2)
+m2 = Manager('Иван', 'менеджер', "подаж", 50000, 3, 2)
 m1.add_employee_in_list(m1)
-m1.add_employee_in_list(m2)
+m2.add_employee_in_list(m2)
 m1.increase_percentage_salary(5)
 
-m1.info()
-print(*m1.get_employee_list())
+# m2.info()
+print(*m2.get_employee_list())

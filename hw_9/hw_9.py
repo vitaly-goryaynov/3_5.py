@@ -93,7 +93,6 @@ class Dungeon:
 
 
 
-
 h1 = Hero('Vasiliy', 100)
 d = Dungeon()
 m1 = Monster('Zubastik', 10)
